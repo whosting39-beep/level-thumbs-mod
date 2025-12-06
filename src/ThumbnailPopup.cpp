@@ -9,7 +9,7 @@ using namespace geode::prelude;
 #include "ImageCache.hpp"
 
 void ThumbnailPopup::onDownload(CCObject* sender){
-    std::string URL = fmt::format("https://raw.githubusercontent.com/whosting39-beep/level-thumbs-mod/{}.png", m_levelID);
+    std::string URL = fmt::format("https://raw.githubusercontent.com/whosting39-beep/level-thumbs-mod/main/thumbs/{}.png", m_levelID);
     CCApplication::sharedApplication()->openURL(URL.c_str());
 }
 
@@ -100,7 +100,7 @@ bool ThumbnailPopup::setup(int id) {
         return true;
     }
     
-    std::string URL = fmt::format("https://raw.githubusercontent.com/whosting39-beep/level-thumbs-mod/{}.png", m_levelID);
+    std::string URL = fmt::format("https://raw.githubusercontent.com/whosting39-beep/level-thumbs-mod/main/thumbs/{}.png", m_levelID);
 
     auto req = web::WebRequest();
     m_downloadListener.bind([this](web::WebTask::Event* e){
